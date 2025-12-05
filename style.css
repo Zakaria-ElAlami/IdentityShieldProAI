@@ -1,0 +1,58 @@
+/* style.css - The Skin of the App */
+
+/* 1. GLOBAL THEME */
+:root {
+    --primary-color: #00ff9d;
+    --bg-dark: #0e1117;
+    --card-bg: #1f2937;
+    --text-color: #ffffff;
+}
+
+/* 2. MAIN BACKGROUND */
+.stApp {
+    background-color: var(--bg-dark);
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* 3. CUSTOM CARDS (The "Container" look) */
+.css-1r6slb0 {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 1px solid #374151;
+}
+
+/* 4. HEADERS WITH GRADIENT */
+h1 {
+    background: -webkit-linear-gradient(45deg, #00ff9d, #00b8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800 !important;
+}
+
+/* 5. BUTTON STYLING (The "Call to Action") */
+div.stButton > button {
+    background: linear-gradient(90deg, #00ff9d 0%, #00b8ff 100%);
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+div.stButton > button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.6);
+}
+
+/* 6. RESPONSIVITY (Mobile Adjustments) */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 24px !important;
+    }
+    .stButton > button {
+        width: 100%; /* Full width buttons on phone */
+    }
+}
