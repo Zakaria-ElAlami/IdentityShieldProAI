@@ -1,58 +1,86 @@
-/* style.css - The Skin of the App */
+/* style.css - Premium Security Theme */
 
-/* 1. GLOBAL THEME */
+/* 1. BRAND COLORS */
 :root {
-    --primary-color: #00ff9d;
-    --bg-dark: #0e1117;
-    --card-bg: #1f2937;
-    --text-color: #ffffff;
+    --bg-deep: #0f172a; /* Deep Navy (Not boring black) */
+    --glass-bg: rgba(30, 41, 59, 0.7); /* Frosted Glass */
+    --accent-primary: #6366f1; /* Indigo */
+    --accent-secondary: #8b5cf6; /* Violet */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
 }
 
-/* 2. MAIN BACKGROUND */
+/* 2. BACKGROUND */
 .stApp {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-deep);
+    background-image: radial-gradient(circle at 50% 0%, #1e1b4b 0%, var(--bg-deep) 70%);
+    color: var(--text-primary);
+}
+
+/* 3. CUSTOM LOGO STYLE */
+.logo-text {
     font-family: 'Helvetica Neue', sans-serif;
-}
-
-/* 3. CUSTOM CARDS (The "Container" look) */
-.css-1r6slb0 {
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    border: 1px solid #374151;
-}
-
-/* 4. HEADERS WITH GRADIENT */
-h1 {
-    background: -webkit-linear-gradient(45deg, #00ff9d, #00b8ff);
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 30%, #a5b4fc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 800 !important;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
 }
 
-/* 5. BUTTON STYLING (The "Call to Action") */
-div.stButton > button {
-    background: linear-gradient(90deg, #00ff9d 0%, #00b8ff 100%);
-    color: #000;
+.logo-badge {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: white;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    margin-left: 10px;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+}
+
+/* 4. GLASS CARDS (The Container) */
+.css-card {
+    background: var(--glass-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 5. SLIDERS & INPUTS */
+/* Customizing the slider color to match the theme */
+div[data-baseweb="slider"] div[role="slider"] {
+    background-color: var(--accent-primary) !important;
+}
+
+/* 6. BUTTONS (Gradient Glow) */
+div.stButton > button {
+    background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    color: white;
+    font-weight: 600;
     border: none;
-    padding: 12px 25px;
-    border-radius: 25px;
+    padding: 12px 28px;
+    border-radius: 12px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
 }
 
 div.stButton > button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 255, 157, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
 }
 
-/* 6. RESPONSIVITY (Mobile Adjustments) */
-@media (max-width: 640px) {
-    h1 {
-        font-size: 24px !important;
-    }
-    .stButton > button {
-        width: 100%; /* Full width buttons on phone */
-    }
+/* 7. UPLOAD BOX */
+section[data-testid="stFileUploader"] {
+    background-color: rgba(255,255,255,0.02);
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px dashed rgba(255,255,255,0.2);
 }
